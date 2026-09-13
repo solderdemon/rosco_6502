@@ -53,10 +53,3 @@ instructions. The older VASM-based firmware remains in
 * [code/firmware/firstboot](code/firmware/firstboot): legacy VASM firmware.
 * [code/software](code/software): example programs, tests and filesystem utilities.
 * [docs](docs): additional project documentation.
-
-## Branch and upstream
-
-`main` is the default development branch of `solderdemon/rosco_6502`.
-It was based on `rosco-6502/rosco_6502:feature/ca65_devel` at commit
-`90e753984e1a5afb291cc48062127a71632c8430`. The former feature branches
-have been removed from this fork; use `main` for further work.
