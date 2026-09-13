@@ -2,7 +2,7 @@
 
 [Documentation index](README.md)
 
-The main firmware is in [code/firmware/rosco_6502](../code/firmware/rosco_6502). It initializes the DUART, timer and RAM vectors, checks memory banks and attempts to load a program from SD. If loading fails or the program returns with RTS, execution enters WozMon.
+The main firmware is in [code/firmware](../code/firmware). It initializes the DUART, timer and RAM vectors, checks memory banks and attempts to load a program from SD. If loading fails or the program returns with RTS, execution enters WozMon.
 
 ## Tools
 
@@ -29,7 +29,7 @@ ROM appears at CPU address `$E000`, but the image is programmed from EEPROM offs
 From the repository root:
 
 ```sh
-cd code/firmware/rosco_6502
+cd code/firmware
 make clean
 make all
 wc -c boot8k.bin boot32k.bin
@@ -77,18 +77,16 @@ The commands are alternatives for different chips. Check the programmer's write 
 
 | File | Responsibility |
 | --- | --- |
-| [bank0.s](../code/firmware/rosco_6502/bank0.s) | Reset, initialization, checks and SD boot |
-| [bank1.s](../code/firmware/rosco_6502/bank1.s), [bank2.s](../code/firmware/rosco_6502/bank2.s), [bank3.s](../code/firmware/rosco_6502/bank3.s) | Other ROM banks |
-| [common.s](../code/firmware/rosco_6502/common.s), [vectors.s](../code/firmware/rosco_6502/vectors.s) | Common code and CPU vectors |
-| [romtable.s](../code/firmware/rosco_6502/romtable.s), [ramtable.s](../code/firmware/rosco_6502/ramtable.s) | Call tables and bank transitions |
-| [duart_spi.s](../code/firmware/rosco_6502/duart_spi.s), [sd_card.s](../code/firmware/rosco_6502/sd_card.s) | SPI and SD |
-| [fat32_readonly.s](../code/firmware/rosco_6502/fat32_readonly.s) | FAT32 reading |
-| [wozmon.s](../code/firmware/rosco_6502/wozmon.s) | Monitor and Intel HEX loader |
+| [bank0.s](../code/firmware/bank0.s) | Reset, initialization, checks and SD boot |
+| [bank1.s](../code/firmware/bank1.s), [bank2.s](../code/firmware/bank2.s), [bank3.s](../code/firmware/bank3.s) | Other ROM banks |
+| [common.s](../code/firmware/common.s), [vectors.s](../code/firmware/vectors.s) | Common code and CPU vectors |
+| [romtable.s](../code/firmware/romtable.s), [ramtable.s](../code/firmware/ramtable.s) | Call tables and bank transitions |
+| [duart_spi.s](../code/firmware/duart_spi.s), [sd_card.s](../code/firmware/sd_card.s) | SPI and SD |
+| [fat32_readonly.s](../code/firmware/fat32_readonly.s) | FAT32 reading |
+| [wozmon.s](../code/firmware/wozmon.s) | Monitor and Intel HEX loader |
 
 The `rosco_6502_8K.cfg` and `rosco_6502_32K.cfg` linker configurations define the layout. CPU vectors start at `$FFFA`. Common regions must retain matching addresses across all banks.
 
 ## Limitations
 
 The ROM table routes `FAT_READ`, `FAT_SEEK`, `FAT_WRITE` and `FAT_CLOSE` to a stub. Use implemented operations such as `FS_READBYTE` and `FS_READFILE` for reading. The current `CLRSCR`, `MOVEXY` and `SETCURSOR` RAM vectors jump to themselves; calling them directly can hang execution.
-
-The legacy [firstboot](../code/firmware/firstboot/README.md) uses VASM/VLINK. Do not use its absolute routine addresses with this firmware.

@@ -20,7 +20,7 @@ SHELL := bash
 MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
-ROSCO_6502_INC := ../../firmware/rosco_6502/inc
+ROSCO_6502_INC := ../../firmware/inc
 
 # using cc65 tools (assumed in path, add path if needed)
 AS := ca65

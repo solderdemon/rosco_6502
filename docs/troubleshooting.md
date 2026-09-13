@@ -33,7 +33,7 @@
 
 The boot code's `not found` message can arise at different stages: SD initialization, FAT32 initialization or file opening. Check them in order: card → MBR/FAT32 → full filename → valid binary for `$0800`.
 
-`FS_ZP_ERRORCODE` values are defined in [defines.inc](../code/firmware/rosco_6502/inc/defines.inc):
+`FS_ZP_ERRORCODE` values are defined in [defines.inc](../code/firmware/inc/defines.inc):
 
 | Code | Meaning |
 | --- | --- |

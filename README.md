@@ -55,9 +55,8 @@ It includes hardware initialization, WozMon, SD card access, read-only FAT32
 support and boot code that looks for `/ROSC0DE_6502.BIN` on the SD card.
 The firmware and filesystem utilities are still under development.
 
-See the [firmware README](code/firmware/rosco_6502/README.md) for build
-instructions. The older VASM-based firmware remains in
-[firstboot](code/firmware/firstboot) for reference.
+See the [firmware README](code/firmware/README.md) for build
+instructions.
 
 ### Related tools
 
@@ -74,7 +73,6 @@ See [Developing and loading programs](docs/software.md#rosco-cli-and-emulator) f
 
 * [design/kicad](design/kicad): board schematics and PCB layouts.
 * [code/pld](code/pld): programmable logic sources.
-* [code/firmware/rosco_6502](code/firmware/rosco_6502): ca65 firmware and ROM linker configurations.
-* [code/firmware/firstboot](code/firmware/firstboot): legacy VASM firmware.
+* [code/firmware](code/firmware): ca65 firmware and ROM linker configurations.
 * [code/software](code/software): example programs, tests and filesystem utilities.
 * [docs](docs): additional project documentation.

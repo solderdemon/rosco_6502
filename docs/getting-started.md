@@ -31,7 +31,7 @@ The current board uses an SCN68681C1A44 DUART. The firmware's main console uses 
 | Received CR display | CRLF |
 | Emulation | VT100/ANSI for control sequences |
 
-UART A and B are initialized in [bank0.s](../code/firmware/rosco_6502/bank0.s). Its baud-rate comments still say `115k2` from the previous UART configuration; use the 38400 bit/s terminal setting above for the current SCN68681C1A44 board. The console RAM vector routes output to UART A.
+UART A and B are initialized in [bank0.s](../code/firmware/bank0.s). Its baud-rate comments still say `115k2` from the previous UART configuration; use the 38400 bit/s terminal setting above for the current SCN68681C1A44 board. The console RAM vector routes output to UART A.
 
 ## Check startup
 

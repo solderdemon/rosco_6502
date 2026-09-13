@@ -24,8 +24,7 @@ For a new board, follow this sequence: inspect assembly and power connections â†
 | [design/kicad](../design/kicad) | Schematic, PCB, symbol and footprint libraries, component CSV |
 | [design/CAMOutputs](../design/CAMOutputs) | Gerber and drill files |
 | [code/pld](../code/pld) | Logic equations, JEDEC files and programming scripts |
-| [code/firmware/rosco_6502](../code/firmware/rosco_6502) | Main ca65 firmware |
-| [code/firmware/firstboot](../code/firmware/firstboot) | Legacy VASM firmware |
+| [code/firmware](../code/firmware) | Main ca65 firmware |
 | [code/software](../code/software) | Examples and filesystem utilities |
 
 ## Status and sources

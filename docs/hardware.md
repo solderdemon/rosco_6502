@@ -58,6 +58,6 @@ The introductory table in `defines.inc` disagrees with the constants about zero 
 - [KiCad schematic](../design/kicad/rosco_6502.kicad_sch), [PDF schematic](../design/kicad/rosco_6502.pdf).
 - [PCB](../design/kicad/rosco_6502.kicad_pcb), [KiCad project](../design/kicad/rosco_6502.kicad_pro).
 - [Component CSV](../design/kicad/rosco_6502.csv), [manufacturing files](../design/CAMOutputs).
-- [Firmware constants](../code/firmware/rosco_6502/inc/defines.inc), [ROM linker configuration](../code/firmware/rosco_6502/rosco_6502_32K.cfg).
+- [Firmware constants](../code/firmware/inc/defines.inc), [ROM linker configuration](../code/firmware/rosco_6502_32K.cfg).
 
 Before manufacturing, check that the schematic, PCB and Gerber revisions match. The PLD source headers still say r1, whereas the hardware notice covers r4.
