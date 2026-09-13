@@ -56,3 +56,8 @@ monitor routines; the legacy firstboot addresses should not be assumed.
 Example programs and filesystem utilities live in [../../software](../../software).
 The ca65 examples use the firmware headers in [inc](inc); their Makefiles
 also use `srec_cat` to generate Intel HEX files.
+
+## Further documentation
+
+[Complete ROM build and programming guide](../../../docs/rom-firmware.md).
+[Documentation index](../../../docs/README.md).

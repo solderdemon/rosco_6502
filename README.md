@@ -1,5 +1,7 @@
 # Really Old-School Computer - 6502
 
+[![rosco_6502 r4 populated PCB in an orthographic 3D view](design/assets/rosco_6502-board-3d.png)](design/kicad/rosco_6502.kicad_pcb)
+
 ## A 65C02 Single-Board Computer
 
 This repository holds design files, firmware and software for the Really Old-School Computer
@@ -16,6 +18,18 @@ This project contains all the design files and source code for the project.
 * All Hardware released under the CERN Open Hardware licence. See LICENCE.hardware.txt.
 * All Documentation released under Creative Commons Attribution. See <https://creativecommons.org/licenses/by/2.0/uk/>
 
+## Documentation
+
+Start with the [documentation index](docs/README.md).
+
+* [Getting started and terminal setup](docs/getting-started.md)
+* [Hardware and memory map](docs/hardware.md)
+* [Building and programming ROM](docs/rom-firmware.md)
+* [Building and programming PLDs](docs/pld-firmware.md)
+* [Developing and loading programs](docs/software.md)
+* [Troubleshooting](docs/troubleshooting.md)
+* [Revision 4 notes](docs/revision-4.md)
+
 ## Specifications
 
 ### Hardware
@@ -23,7 +37,7 @@ This project contains all the design files and source code for the project.
 The hardware specifications for the rosco_6502 are:
 
 * WDC 65C02 at up-to 14MHz (In theory, 10MHz testing target currently).
-* XR68C681P provides two UARTs, Timers and SD Card / SPI / GPIO
+* SCN68681C1A44 provides two UARTs, timers and SD Card / SPI / GPIO; the console runs at 38400 bit/s
 * 528KB RAM
   * 16KB low RAM ($0000 - $3FFF)
   * 16 x 32KB RAM banks ($4000 - $BFFF)
@@ -44,6 +58,17 @@ The firmware and filesystem utilities are still under development.
 See the [firmware README](code/firmware/rosco_6502/README.md) for build
 instructions. The older VASM-based firmware remains in
 [firstboot](code/firmware/firstboot) for reference.
+
+### Related tools
+
+* [rosco CLI](https://github.com/solderdemon/rosco-cli): a cross-platform `rosco` command
+  that creates, builds and uploads rosco_6502 (and rosco_m68k) programs over UART, or
+  runs them in the emulator.
+* [rosco-emulator](https://github.com/solderdemon/rosco-emulator): a slimmed-down MAME
+  build that emulates the rosco_6502 r4, so programs and firmware can be tested without
+  the board.
+
+See [Developing and loading programs](docs/software.md#rosco-cli-and-emulator) for usage.
 
 ## Repository layout
 
